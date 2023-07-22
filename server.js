@@ -1,8 +1,8 @@
 import express from "express";
 import cors from "cors";
+import dotenv from "dotenv";
 import bodyParser from "body-parser";
 import { Resend } from "resend";
-const resend = new Resend(process.env.RESEND_API);
 
 const app = express();
 
@@ -15,6 +15,7 @@ app.get("/", (req, res) => {
     res.json("Backend Server is running ...");
 });
 
+const resend = new Resend(process.env.RESEND_API);
 app.post("/mailportfolio", async (req, res) => {
     try {
         await resend.emails.send({
