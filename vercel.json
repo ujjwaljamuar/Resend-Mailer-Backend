@@ -1,0 +1,15 @@
+{
+    "version": 2,
+    "name": "mailer",
+    "builds": [{ "src": "server.js", "use": "@vercel/node" }],
+    "routes": [
+        {
+            "src": "/(.*)",
+            "dest": "/server.js",
+            "headers": {
+                "Access-Control-Allow-Origin": "*",
+                "Access-Control-Allow-Methods": "GET, POST"
+            }
+        }
+    ]
+}
