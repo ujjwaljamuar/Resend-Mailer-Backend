@@ -21,7 +21,7 @@ app.post("/mailportfolio", async (req, res) => {
         await resend.emails.send({
             from: `${req.body.data.name} <onboarding@resend.dev>`,
             to: ["ujjwalj12222@gmail.com"],
-            subject: "Contact from Portfolio",
+            subject: "Contacted through Portfolio",
             html: `<strong>Name: ${req.body.data.name} <br><br>
             Email: ${req.body.data.email}<br><br>
             Message: ${req.body.data.message}  </strong>`,
