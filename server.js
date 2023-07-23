@@ -22,7 +22,9 @@ app.post("/mailportfolio", async (req, res) => {
             from: `${req.body.data.name} <onboarding@resend.dev>`,
             to: ["ujjwalj12222@gmail.com"],
             subject: "Contact from Portfolio",
-            html: `<strong>Name: ${req.body.data.name} <br>Email:${req.body.data.email}<br>Message: ${req.body.data.message}  </strong>`,
+            html: `<strong>Name: ${req.body.data.name} <br><br>
+            Email: ${req.body.data.email}<br><br>
+            Message: ${req.body.data.message}  </strong>`,
         });
 
         // console.log(req.body.data.name);
