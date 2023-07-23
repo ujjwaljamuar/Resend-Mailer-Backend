@@ -19,12 +19,10 @@ const resend = new Resend(process.env.RESEND_API);
 app.post("/mailportfolio", async (req, res) => {
     try {
         await resend.emails.send({
-            from: "Acme <onboarding@resend.dev>",
+            from: `${req.body.data.name} <onboarding@resend.dev>`,
             to: ["ujjwalj12222@gmail.com"],
-            subject: "Contact from portfolio",
-            text: `Name: ${req.body.data.name}
-Email: ${req.body.data.email}
-Message: ${req.body.data.message}`,
+            subject: "Contact from Portfolio",
+            html: `<strong>Name: ${req.body.data.name} <br>Email:${req.body.data.email}<br>Message: ${req.body.data.message}  </strong>`,
         });
 
         // console.log(req.body.data.name);
